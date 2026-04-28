@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamah Alisa Frozen Food</title>
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="nav-container">
+        <h2>Mamah Alisa Frozen</h2>
+
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cartCount">0</span>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Frozen Food Premium</h1>
+    <p>Lezat, praktis, siap kapan saja</p>
+    <p>Nikmati frozen food berkualitas tinggi untuk keluarga Anda.</p>
+<p>Tanpa ribet, tinggal goreng / kukus, langsung siap disajikan 😋</p>
+
+<p>✔ Rasa enak & premium</p>
+<p>✔ Higienis & aman</p>
+<p>✔ Cocok untuk stok di rumah</p>
+
+<p>🚀 Pesan sekarang, pengiriman cepat!</p>
+    <button class="cta-button" onclick="scrollToProduk()">Pesan Sekarang</button>
+        </div>
+</section>
+
+<section class="products">
+    <!--produk 1-->
+    <h2>Produk Kami</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">Best Seller</div>
+                <img src="assets/nugget.jpg">
+                <h3>Nugget Ayam Premium</h3>
+                <p>Rp 45.000</p>
+                <button onclick="addToCart('Nugget Ayam', 45000)">Tambah ke Keranjang</button>
+            </div>
+    <!--produk 2-->
+            <div class="product-card">
+                <img src="assets/fishroll.jpg">
+                <h3>fishroll (500grm)</h3>
+                <p>Rp 35.000</p>
+                <button onclick="addToCart('fishroll', 35000)">Tambah ke Keranjang</button>
+            </div>
+    <!--produk 3-->
+            <div class="product-card">
+                <img src="assets/dimsum.jpeg">
+                <h3>dimsum (10+saos)</h3>
+                <p>Rp 30.000</p>
+                <button onclick="addToCart('dimsum', 30000)">Tambah ke Keranjang</button>
+            </div>
+    <!--produk 4-->
+             <div class="product-card">
+                <img src="assets/udang keju.jpeg">
+                <h3>udang keju (10pcs)</h3>
+                <p>Rp 24.000</p>
+                <button onclick="addToCart('udang keju', 24000)">Tambah ke Keranjang</button>
+            </div>
+    <!--produk 5-->
+             <div class="product-card">
+                <img src="assets/udang tepung crispy.jpeg">
+                <h3>udang tepung (500grm)</h3>
+                <p>Rp 55.000</p>
+                <button onclick="addToCart('udang tepung', 55000)">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="product-grid">
+    </div>
+<section class="cara-beli">
+    <h2>Cara Pembelian</h2>
+
+    <div class="steps">
+        <div class="step">1️⃣ Pilih produk</div>
+        <div class="step">2️⃣ Klik tambah ke keranjang</div>
+        <div class="step">3️⃣ Klik checkout</div>
+        <div class="step">4️⃣ Isi data & pilih metode</div>
+        <div class="step">5️⃣ Konfirmasi via WhatsApp</div>
+    </div>
+</section>
+
+<!-- CART -->
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeCheckout()">&times;</span>
+        <h3>Keranjang</h3>
+        <div id="cartItems"></div>
+        <h4 id="cartTotal">Total: Rp 0</h4>
+        <button onclick="openCheckout()">Checkout</button>
+        <button onclick="toggleCart()">Tutup</button>
+    </div>
+</div>
+
+<!-- CHECKOUT -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-content">
+        <h3>Checkout</h3>
+        <p style="color:green; font-size:14px;">
+✅ Setelah klik pesan, admin akan menghubungi via WhatsApp
+</p>
+
+        <form id="checkoutForm">
+            <input type="text" id="nama" placeholder="Nama" required>
+            <input type="text" id="hp" placeholder="No HP" required>
+            <textarea id="alamat" placeholder="Alamat" required></textarea>
+
+           <select id="metode" required>
+    <option value="">Pilih metode pembayaran</option>
+    <option value="COD">COD (Bayar di tempat)</option>
+    <option value="Transfer">Transfer Bank</option>
+    <option value="WhatsApp">Konfirmasi WhatsApp</option>
+</select>
+
+
+            <p id="totalCheckout">Total: Rp 0</p>
+
+            <div style="display:flex; gap:10px; margin-top:10px;">
+    <button type="submit">Pesan</button>
+    <button type="button" onclick="closeCheckout()">Tutup</button>
+</div>
+        </form>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
